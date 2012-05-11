@@ -34,6 +34,7 @@ class Paypalexpress_lib {
     public  $USE_PROXY = false;
     public  $version="";
     private $module='';
+	private $_error_message;
 
 
 
@@ -463,6 +464,18 @@ class Paypalexpress_lib {
 		return $nvpResArray;
 	}
 
+
+	
+	private function _set_error_message($error)
+	{
+		$this->_error_message = $error;
+	}
+	
+	public function get_error_message()
+	{
+		return $this->_error_message;
+	}
+	
 
 }
 
